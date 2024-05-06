@@ -10,8 +10,19 @@ body {
   color: var(--top);
 }
 
+p {
+  font-weight: normal;
+}
+
 .header h1 {
   font-family: "Commissioner", sans-serif;
+  font-weight: 700;
+}
+
+h2,
+h3,
+h4,
+h5 {
   font-weight: 700;
 }
 
@@ -216,12 +227,11 @@ img {
     height: 100px;
   }
 
-  .DHCP_LOGO {
-    height: 80px;
-    margin-top: 10px;
-    margin-left: 10px;
-  }
   .header h1 {
+    font-size: 28px;
+  }
+
+  .DHCP_LOGO {
     display: none;
   }
 }
