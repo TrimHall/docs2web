@@ -1,122 +1,141 @@
-html,body {
-	padding: 0px;
-	margin: 0px;
-	width: 100%;
-	height: 100%;
-	font-family: 'Poppins', sans-serif;
-	background: var(--middle);
-	color: var(--font);
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  font-family: "Commissioner", sans-serif;
+  font-weight: 700;
+  background: var(--player);
+  color: var(--top);
+}
+
+.header h1 {
+  font-family: "Commissioner", sans-serif;
+  font-weight: 700;
 }
 
 .Template_0 {
-	--top: #2B2B3A;
-	--middle: #254558; 
-	--normal: #1ED2F4;
-	--hover: #EAFC40;
-	--alt: #F5CE28;
-	--logo: white;
-	--player: white;
-	--font: white;
-	--fontHover: black;
+  --text: #2b2b3a;
+  --blue_background: #0d3c7c;
+  --normal: #1ed2f4;
+  --hover: #eafc40;
+  --alt: #f5ce28;
+  --white: #fff;
+  --player: white;
+  --font: white;
+  --fontHover: red;
 }
 
-a, .Link {
-     cursor: pointer;
-     color: var(--hover);
-     text-decoration: underline;
+a,
+.Link {
+  cursor: pointer;
+  /* color: var(--hover); */
+  text-decoration: none;
 }
 
-a:hover, .Link:hover {
-     text-decoration: none;
+a:hover,
+.Link:hover {
+  text-decoration: underline;
 }
 
 .Icon_Back {
-	top: 30px;
-	left: 30px;
-	font-size: 32px;
+  top: 30px;
+  left: 30px;
+  font-size: 32px;
 }
 
 .Section {
-	width: 80%;
-	height: 100%;
+  width: 80%;
+  height: 100%;
 }
 
 .Index_Section {
-	display: flex;
-	margin: auto;
-  	justify-content: center;
-  	align-content: center;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-content: center;
 }
 
 .Instructions_Section {
-	display: flex;
-	margin: auto;
-  	justify-content: center;
-  	align-items: center;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .Instructions_Container {
 }
 
 .Section_Link {
-	font-size: 36px;
+  font-size: 36px;
+  color: var(--blue_background);
 }
 
 .Index_Content {
+}
 
+.Index_Content hr {
+  margin: 0px;
 }
 
 .Index_Menu {
-
 }
 
 .Index_Title {
-	font-size: 48px;
-	text-transform: uppercase;
-	text-align: center;
+  font-size: 36px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 25px;
 }
 
 .Page_Container {
-	margin: auto;
-  	justify-content: center;
-  	align-items: center;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .Page_Content {
+}
 
+.Page_content.Control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .Section_Title {
-	font-size: 36px;
-	text-transform: uppercase;
-	text-align: center;
+  font-size: 36px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .Section_Content {
-	font-size: 18px;
+  font-size: 18px;
 }
 
 .Subsection_Title {
-	font-size: 28px;
-	text-transform: uppercase;
-	text-align: center;
+  font-size: 28px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .Subsection_Content {
-	font-size: 18px;
+  font-size: 18px;
 }
 
 #urlBox {
-	border-radius: 5px;
-    height: 32px;
-    padding: 10px;
-    font-size: 18pt;
-    text-align: center;
-    color: #333333;
+  border-radius: 5px;
+  height: 32px;
+  padding: 10px;
+  font-size: 18pt;
+  text-align: center;
+  color: #333333;
 }
 
 button {
-	font-size: 24px;
+  font-size: 24px;
 }
 
 .grid-container {
@@ -127,42 +146,82 @@ button {
 }
 
 .grid-cell {
-	width: 370px;
-	text-align: justify;
+  width: 370px;
+  text-align: justify;
 }
 
 hr {
-	height: 15px;
+  height: 15px;
 }
 
 .Hidden {
-	display: none;
+  display: none;
 }
 
 .Level_0 {
-	margin-left: 0px;
+  margin-left: 0px;
 }
 
 .Level_1 {
-	margin-left: 40px;
+  margin-left: 40px;
 }
 
 .Level_2 {
-	margin-left: 80px;
+  margin-left: 80px;
 }
 
 .Level_3 {
-	margin-left: 120px;
+  margin-left: 120px;
 }
 
 .Level_4 {
-	margin-left: 160px;
+  margin-left: 160px;
 }
 
 .Level_5 {
-	margin-left: 200px;
+  margin-left: 200px;
 }
 
-.Extra_Small {
-	font-size: 9px;
+.text {
+  font-size: 9px;
+}
+
+/* Custom DHCP styles */
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  color: var(--white);
+  background-color: var(--blue_background);
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+.DHCP_LOGO {
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 15px;
+  height: 120px;
+  border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    height: 100px;
+  }
+
+  .DHCP_LOGO {
+    height: 80px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .header h1 {
+    display: none;
+  }
 }

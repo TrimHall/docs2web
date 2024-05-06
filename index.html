@@ -1,116 +1,205 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" ng-app="Website_App" ng-controller="Website_Controller">
-    <head>
-        <title>{{data.title}}</title>
-        <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="./index.css">
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-sanitize.js"></script>
-        <script src="./config.js"></script>
-        <script src="./index.js"></script>
-    </head>
-    <body class="Template_0">
-    	<div id="instructions" class="Instructions_Section Section">
-        	<div class="Instructions_Container">
-	        	<div class="Index_Title">
-	        		<img src='//carlostoxtli.com/files/docs2web-logo.png'>
-	        	</div>
-	        	<hr>
-	        	<div class="Index_Menu">
-	        		<center>
-		        		<div class="Section_Content">
-		        			Docs2Web turns any Google Docs document into a modern website.<br><br>
-		        			INSTRUCTIONS:
-		        		</div>
-	        			<div class='grid-container'>
-		        			<div class='grid-cell'>
-		        				<b>Step 1</b>: Set styles to the titles and subtitles as it is shown in the image below (at least you must set one "Title" and one "Heading 1" style.)
-		        			</div>
-		        			<div class='grid-cell'>
-		        				<b>Step 2</b>: Publish your document by clicking on "<b>File</b> > <b>Publish to the web</b> > <b>Publish</b>", and copy the generated URL as is shown in the image below.
-		        			</div>
-		        			<div class='grid-cell'>
-		        				<img width="370" src='//carlostoxtli.com/files/docs2web-format.png'>
-		        			</div>
-		        			<div class='grid-cell'>
-		        				<img width="370" src='//carlostoxtli.com/files/docs2web-instructions.png'>
-		        			</div>
-	        			</div>
-		        		<div class="Section_Content">
-		        			Paste your public URL here:
-		        		</div>
-			        	<input type="text" id="urlBox" size="60" placeholder="https://docs.google.com/document/d/e/[YOUR_ID]/pub">
-			        	<br><br>
-			        	<button class="w3-btn w3-block w3-teal" id="generate">GENERATE</button>
-			        	<br>
-			        	<a target="_blank" href="https://docs.google.com/document/d/1x1INreN0OH_Zs2UT1nY-akSDtGRTs_g01hLcO2OSW4k/copy">Example document</a>, Example URL:<br>
-			        	<a target="_blank" class="Extra_Small" href="https://docs.google.com/document/d/e/2PACX-1vSn1zSNNO5is_6Wc-0V7XTCxOBuhPAu63pJ-NCUrTlqDu8KCtL5k3D3xm3JLa1kmE6-b4X9eCJahTgb/pub">https://docs.google.com/document/d/e/2PACX-1vSn1zSNNO5is_6Wc-0V7XTCxOBuhPAu63pJ-NCUrTlqDu8KCtL5k3D3xm3JLa1kmE6-b4X9eCJahTgb/pub</a>
-			        	<br><br>
-			        	Created by <a target="_blank" href="http://www.carlostoxtli.com/docs2web/#url=https://docs.google.com/document/d/e/2PACX-1vRzOcmxi_cktmaHhyNufzci3c27HYIeAy3Zep026Va6PFbnpXIAzs6WDkHNoyjuLWuo1DtZEM0GTCMm/pub">Carlos Toxtli</a>. You can find the <a target="_blank" href="https://github.com/toxtli/docs2web">source code here</a>.
-		        	</center>
-		    	</div>
-	    	</div>
-    	</div>
-        <div class="Index_Section Section Hidden">
-        	<div class="Index_Content">
-	        	<div class="Index_Title">{{data.title}}</div>
-	        	<br><hr><br>
-	        	<div class="Index_Menu">
-		        	<div id="index_{{i}}" class="Section_Link Link" ng-repeat="(i, page) in data.sections">{{page.title}}</div>
-		    	</div>
-	    	</div>
+  <head>
+    <title>{{data.title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-sanitize.js"></script>
+    <script src="./config.js"></script>
+    <script src="./index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/724ea07407.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="Template_0">
+    <div id="instructions" class="Instructions_Section Section">
+      <div class="Instructions_Container">
+        <div class="Index_Title">
+          <img src="//carlostoxtli.com/files/docs2web-logo.png" />
         </div>
-        <div id="section_{{i}}" class="Page_Container Section Hidden" ng-repeat="(i, section) in data.sections">
-        	<div class="Icon_Back Back fa fa-chevron-circle-left"></div>
-        	<div class="Page_Content">
-	        	<div class="Section_Title">{{section.title}}</div>
-	        	<hr>
-	        	<div class="Section_Content" ng-bind-html="section.content"></div>
-	        	<div class="Subsection_Container" ng-repeat="subsection in section.sections">
-	        		<div class="Subsection_Title">{{subsection.title}}</div>
-	        		<hr>
-		            <div class="Subsection_Content" ng-bind-html="subsection.content"></div>
-	        	</div>
-        	</div>
+        <hr />
+        <div class="Index_Menu">
+          <center>
+            <div class="Section_Content">
+              Docs2Web turns any Google Docs document into a modern website.<br /><br />
+              INSTRUCTIONS:
+            </div>
+            <div class="grid-container">
+              <div class="grid-cell">
+                <b>Step 1</b>: Set styles to the titles and subtitles as it is
+                shown in the image below (at least you must set one "Title" and
+                one "Heading 1" style.)
+              </div>
+              <div class="grid-cell">
+                <b>Step 2</b>: Publish your document by clicking on "<b>File</b>
+                > <b>Publish to the web</b> > <b>Publish</b>", and copy the
+                generated URL as is shown in the image below.
+              </div>
+              <div class="grid-cell">
+                <img
+                  width="370"
+                  src="//carlostoxtli.com/files/docs2web-format.png"
+                />
+              </div>
+              <div class="grid-cell">
+                <img
+                  width="370"
+                  src="//carlostoxtli.com/files/docs2web-instructions.png"
+                />
+              </div>
+            </div>
+            <div class="Section_Content">Paste your public URL here:</div>
+            <input
+              type="text"
+              id="urlBox"
+              size="60"
+              placeholder="https://docs.google.com/document/d/e/[YOUR_ID]/pub"
+            />
+            <br /><br />
+            <button class="w3-btn w3-block w3-teal" id="generate">
+              GENERATE
+            </button>
+            <br />
+            <a
+              target="_blank"
+              href="https://docs.google.com/document/d/1x1INreN0OH_Zs2UT1nY-akSDtGRTs_g01hLcO2OSW4k/copy"
+              >Example document</a
+            >, Example URL:<br />
+            <a
+              target="_blank"
+              class="Extra_Small"
+              href="https://docs.google.com/document/d/e/2PACX-1vSn1zSNNO5is_6Wc-0V7XTCxOBuhPAu63pJ-NCUrTlqDu8KCtL5k3D3xm3JLa1kmE6-b4X9eCJahTgb/pub"
+              >https://docs.google.com/document/d/e/2PACX-1vSn1zSNNO5is_6Wc-0V7XTCxOBuhPAu63pJ-NCUrTlqDu8KCtL5k3D3xm3JLa1kmE6-b4X9eCJahTgb/pub</a
+            >
+            <br /><br />
+            Created by
+            <a
+              target="_blank"
+              href="http://www.carlostoxtli.com/docs2web/#url=https://docs.google.com/document/d/e/2PACX-1vRzOcmxi_cktmaHhyNufzci3c27HYIeAy3Zep026Va6PFbnpXIAzs6WDkHNoyjuLWuo1DtZEM0GTCMm/pub"
+              >Carlos Toxtli</a
+            >. You can find the
+            <a target="_blank" href="https://github.com/toxtli/docs2web"
+              >source code here</a
+            >.
+          </center>
         </div>
-        <div id="temp" hidden>
+      </div>
+    </div>
+    <img src="./dhcp_logo.jpeg" alt="DHCP Logo" class="DHCP_LOGO" />
+    <div class="header">
+      <h1>Dales Hang Gliding and Paragliding Club</h1>
+    </div>
+    <div class="Index_Section Section Hidden">
+      <div class="Index_Content">
+        <div class="Index_Title">{{data.title}}</div>
+        <br />
+        <hr />
+        <br />
+        <div class="Index_Menu">
+          <div
+            id="index_{{i}}"
+            class="Section_Link Link"
+            ng-repeat="(i, page) in data.sections"
+          >
+            {{page.title}}
+          </div>
         </div>
-        <!-- Google Analytics -->
-	    <script>
-	      (function(i, s, o, g, r, a, m) {
-	          i['GoogleAnalyticsObject'] = r;
-	          i[r] = i[r] || function() {
-	              (i[r].q = i[r].q || []).push(arguments)
-	          }, i[r].l = 1 * new Date();
-	          a = s.createElement(o),
-	              m = s.getElementsByTagName(o)[0];
-	          a.async = 1;
-	          a.src = g;
-	          m.parentNode.insertBefore(a, m)
-	      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-	      ga('create', 'UA-90861913-1', 'auto');
-	      ga('send', 'pageview');
-	    </script>
-	    <!-- End Google Analytics -->
-	    <!-- Default Statcounter code for Carlos Toxtli Website
+      </div>
+    </div>
+    <div
+      id="section_{{i}}"
+      class="Page_Container Section Hidden"
+      ng-repeat="(i, section) in data.sections"
+    >
+      <div class="Page_Content">
+        <div class="Page_content Control">
+          <div class="Icon_Back Back fa fa-chevron-circle-left"></div>
+          <div class="fa-solid Home fa-house"></div>
+          <div class="Icon_Back Next fa fa-chevron-circle-right"></div>
+        </div>
+
+        <div class="Section_Title">{{section.title}}</div>
+        <hr />
+        <div class="Section_Content" ng-bind-html="section.content"></div>
+        <div
+          class="Subsection_Container"
+          ng-repeat="subsection in section.sections"
+        >
+          <div class="Subsection_Title">{{subsection.title}}</div>
+          <hr />
+          <div
+            class="Subsection_Content"
+            ng-bind-html="subsection.content"
+          ></div>
+        </div>
+        <div class="Page_content Control">
+          <div class="Icon_Back Back fa fa-chevron-circle-left"></div>
+          <div class="fa-solid Home fa-house"></div>
+          <div class="Icon_Back Next fa fa-chevron-circle-right"></div>
+        </div>
+      </div>
+    </div>
+    <div id="temp" hidden></div>
+    <!-- Google Analytics -->
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+      ga("create", "UA-90861913-1", "auto");
+      ga("send", "pageview");
+    </script>
+    <!-- End Google Analytics -->
+    <!-- Default Statcounter code for Carlos Toxtli Website
 	    http://www.carlostoxtli.com -->
-	    <script type="text/javascript">
-	      var sc_project=11706293; 
-	      var sc_invisible=1; 
-	      var sc_security="d809fc4a"; 
-	    </script>
-	    <script type="text/javascript"
-	    src="https://www.statcounter.com/counter/counter.js"
-	    async></script>
-	    <noscript><div class="statcounter"><a title="web statistics"
-	    href="http://statcounter.com/" target="_blank"><img
-	    class="statcounter"
-	    src="//c.statcounter.com/11706293/0/d809fc4a/1/" alt="web
-	    statistics"></a></div></noscript>
-	    <!-- End of Statcounter Code -->
-    </body>
+    <script type="text/javascript">
+      var sc_project = 11706293;
+      var sc_invisible = 1;
+      var sc_security = "d809fc4a";
+    </script>
+    <script
+      type="text/javascript"
+      src="https://www.statcounter.com/counter/counter.js"
+      async
+    ></script>
+    <noscript
+      ><div class="statcounter">
+        <a title="web statistics" href="http://statcounter.com/" target="_blank"
+          ><img
+            class="statcounter"
+            src="//c.statcounter.com/11706293/0/d809fc4a/1/"
+            alt="web
+	    statistics"
+        /></a></div
+    ></noscript>
+    <!-- End of Statcounter Code -->
+  </body>
 </html>
