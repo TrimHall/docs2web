@@ -225,6 +225,10 @@ img {
   border-radius: 5px;
 }
 
+a {
+  color: var(--blue_background);
+}
+
 @media (max-width: 600px) {
   .header {
     height: 100px;
