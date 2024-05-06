@@ -36,6 +36,7 @@ h5 {
   --player: white;
   --font: white;
   --fontHover: red;
+  --links: rgb(0, 94, 184);
 }
 
 a,
@@ -226,7 +227,12 @@ img {
 }
 
 a {
-  color: var(--blue_background);
+  color: var(--links);
+  font-weight: 600;
+}
+
+li {
+  font-weight: 400;
 }
 
 @media (max-width: 600px) {
